@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="RxGcm-0.2.6">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.VictorAlbertos/RxGcm/0.2.6/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.VictorAlbertos/RxGcm/0.2.6/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.VictorAlbertos/RxGcm/0.2.6/2cea4ea5f00b0f4fa453088184666134ddd75b95/RxGcm-0.2.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

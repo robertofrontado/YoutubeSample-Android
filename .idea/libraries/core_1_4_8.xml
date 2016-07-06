@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="core-1.4.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.VictorAlbertos.RxCache/core/1.4.8/70f1fa9f40a687225c02cba06351d6f3998d484e/core-1.4.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.VictorAlbertos.RxCache/core/1.4.8/98650d5d70d30b179f8b3c6b7b4808056da0f845/core-1.4.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
