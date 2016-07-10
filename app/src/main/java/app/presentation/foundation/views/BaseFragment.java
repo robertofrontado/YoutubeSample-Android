@@ -27,8 +27,8 @@ import android.view.ViewGroup;
 import com.trello.rxlifecycle.RxLifecycle;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
-import org.base_app_android.BuildConfig;
-import org.base_app_android.R;
+import com.frontado.youtubesample.BuildConfig;
+import com.frontado.youtubesample.R;
 
 import javax.inject.Inject;
 

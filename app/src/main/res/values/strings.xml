@@ -5,4 +5,7 @@
     <string name="fill_missing_fields">Fill missing fields</string>
     <string name="loading">Loading</string>
     <string name="no_results">No results</string>
+
+    <string name="channels_list">Channels</string>
+    <string name="server_client_id">992677283859-echcgbi8p9llid644ud6ll8hqso3g736.apps.googleusercontent.com</string>
 </resources>

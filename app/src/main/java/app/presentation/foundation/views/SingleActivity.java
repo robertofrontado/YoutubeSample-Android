@@ -17,7 +17,7 @@
 package app.presentation.foundation.views;
 
 
-import org.base_app_android.R;
+import com.frontado.youtubesample.R;
 
 @LayoutResActivity(R.layout.single_fragment_activity)
 public class SingleActivity extends BaseActivity {

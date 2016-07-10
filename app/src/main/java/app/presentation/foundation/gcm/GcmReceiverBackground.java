@@ -23,7 +23,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
 
-import org.base_app_android.R;
+import com.frontado.youtubesample.R;
 
 import app.domain.foundation.gcm.GcmNotification;
 import app.presentation.foundation.BaseApp;

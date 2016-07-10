@@ -16,10 +16,19 @@
 
 package app.presentation.sections;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.ListFragment;
+
+import com.frontado.youtubesample.R;
+
 import javax.inject.Inject;
 
 import app.data.sections.WireframeRepository;
 import app.presentation.foundation.BaseApp;
+import app.presentation.foundation.views.BaseActivity;
+import app.presentation.foundation.views.SingleActivity;
+import app.presentation.sections.channels.ChannelsFragment;
 import rx.Observable;
 
 /**
@@ -34,5 +43,17 @@ public class Wireframe {
 
     public void popCurrentScreen() {
         baseApp.getLiveActivity().finish();
+    }
+
+    public void channels() {
+        Bundle bundle = new Bundle();
+        bundle.putString(BaseActivity.Behaviour.TITLE_KEY, baseApp.getString(R.string.channels_list));
+        bundle.putBoolean(BaseActivity.Behaviour.SHOW_BACK_KEY, false);
+        bundle.putSerializable(BaseActivity.Behaviour.FRAGMENT_CLASS_KEY, ChannelsFragment.class);
+
+        Intent intent = new Intent(baseApp, SingleActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.putExtras(bundle);
+        baseApp.getLiveActivity().startActivity(intent);
     }
 }

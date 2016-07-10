@@ -16,6 +16,8 @@
 
 package app.presentation.sections.launch;
 
+import android.os.Handler;
+
 import javax.inject.Inject;
 
 import app.data.foundation.analytics.GoogleAnalyticsSender;
@@ -30,7 +32,8 @@ public class LaunchActivity extends BaseActivity {
 
     @Override protected void initViews() {
         super.initViews();
-        // wireframe.dashboard();
-        googleAnalytics.send(this.getClass().getSimpleName());
+        // Show Channels after 2 seconds
+        final Handler handler = new Handler();
+        handler.postDelayed(() -> wireframe.channels(), 2000);
     }
 }

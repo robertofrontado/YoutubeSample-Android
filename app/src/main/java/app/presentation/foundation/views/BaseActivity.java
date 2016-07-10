@@ -31,8 +31,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-
-import org.base_app_android.R;
+import com.frontado.youtubesample.R;
 
 import java.io.Serializable;
 

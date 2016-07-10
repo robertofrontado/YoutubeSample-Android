@@ -19,11 +19,12 @@ package app.presentation.foundation;
 import android.app.Application;
 import android.support.annotation.Nullable;
 
+import com.frontado.youtubesample.BuildConfig;
+import com.frontado.youtubesample.R;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
-import org.base_app_android.BuildConfig;
-import org.base_app_android.R;
+
 
 import app.data.foundation.gcm.GcmMessageReceiver;
 import app.data.foundation.gcm.GcmTokenReceiver;
@@ -64,22 +65,22 @@ public class BaseApp extends Application {
     }
 
     private void initGoogleAnalytics() {
-        analytics = GoogleAnalytics.getInstance(this);
-
-        if(BuildConfig.DEBUG) {
-            // true = for log output, it does not sent data to Google Analytics
-            analytics.setDryRun(true);
-            // To enable debug logging on a device run:
-            // adb shell setprop log.tag.GAv4 DEBUG
-            // adb logcat -s GAv4
-            // true = disable google analytics on the app
-//        analytics.setAppOptOut(true);
-        }
-
-        tracker = analytics.newTracker(getString(R.string.ga_trackingId));
-        tracker.enableExceptionReporting(true);
-        tracker.enableAdvertisingIdCollection(true);
-        tracker.enableAutoActivityTracking(false);
+//        analytics = GoogleAnalytics.getInstance(this);
+//
+//        if(BuildConfig.DEBUG) {
+//            // true = for log output, it does not sent data to Google Analytics
+//            analytics.setDryRun(true);
+//            // To enable debug logging on a device run:
+//            // adb shell setprop log.tag.GAv4 DEBUG
+//            // adb logcat -s GAv4
+//            // true = disable google analytics on the app
+////        analytics.setAppOptOut(true);
+//        }
+//
+//        tracker = analytics.newTracker(getString(R.string.ga_trackingId));
+//        tracker.enableExceptionReporting(true);
+//        tracker.enableAdvertisingIdCollection(true);
+//        tracker.enableAutoActivityTracking(false);
     }
 
     public Tracker getTracker() {

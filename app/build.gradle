@@ -1,8 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'me.tatarka.retrolambda'
-apply plugin: 'android-apt'
-
 
 buildscript {
     repositories {
@@ -21,7 +19,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "org.base_app_android"
+        applicationId "com.frontado.youtubesample"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -50,12 +48,12 @@ android {
         main {
             res.srcDirs =
                     [
-                            'src/main/res/drawable-svg',
-                            'src/main/res/sections/common',
-                            'src/main/res/sections/user_demo',
-                            'src/main/res/sections/dashboard',
+                            'src/main/res',
                             'src/main/res/sections',
-                            'src/main/res'
+                            'src/main/res/sections/common',
+                            'src/main/res/sections/channels',
+                            'src/main/res/sections/detail',
+                            'src/main/res/drawable-svg',
                     ]
         }
     }
@@ -79,11 +77,11 @@ android {
 
 ext {
     versions = [
-            support: "23.4.0",
-            googlePlayServices : "8.4.0",
-            retrofit           : "2.0.2",
-            dagger             : "2.4",
-            rx_cache           : "1.4.8"
+            support           : "23.4.0",
+            googlePlayServices: "8.4.0",
+            retrofit          : "2.0.2",
+            dagger            : "2.4",
+            rx_cache          : "1.4.8"
 
     ]
 }
@@ -95,7 +93,6 @@ dependencies {
     apt "com.google.dagger:dagger-compiler:${versions.dagger}"
     compile "com.google.dagger:dagger:${versions.dagger}"
     provided "org.glassfish:javax.annotation:10.0-b28"
-    compile "com.github.VictorAlbertos:RxGcm:0.2.6"
 
     //Data layer
     compile "com.squareup.retrofit2:retrofit:${versions.retrofit}"
@@ -104,34 +101,36 @@ dependencies {
     compile "com.github.VictorAlbertos.RxCache:core:${versions.rx_cache}"
     apt "com.github.VictorAlbertos.RxCache:compiler:${versions.rx_cache}"
 
-    compile "org.projectlombok:lombok:1.16.6"
-
     //Presentation layer
     compile "com.android.support:appcompat-v7:${versions.support}"
     compile "com.android.support:design:${versions.support}"
+    compile "com.google.android.gms:play-services-auth:${versions.googlePlayServices}"
     compile "com.google.android.gms:play-services-analytics:${versions.googlePlayServices}"
-    compile "io.reactivex:rxandroid:1.2.0"
-    compile "com.squareup.picasso:picasso:2.5.2"
-    compile "com.malinskiy:superrecyclerview:1.1.3"
-    compile "com.pnikosis:materialish-progress:1.7"
-    compile ("com.github.afollestad.material-dialogs:core:0.8.5.6@aar") {
+    compile("com.github.afollestad.material-dialogs:core:0.8.5.6@aar") {
         transitive = true
     }
-    compile "com.jakewharton:butterknife:7.0.1"
-    compile "com.trello:rxlifecycle:0.5.0"
-    compile "com.trello:rxlifecycle-components:0.5.0"
-    compile "com.github.FuckBoilerplate:OkAdapters:0.1.0"
 
     //Testing
     testCompile 'junit:junit:4.12'
     androidTestCompile "com.android.support.test:runner:0.4.1"
     androidTestCompile "com.android.support.test:rules:0.4.1"
-    androidTestCompile ("com.android.support.test.espresso:espresso-contrib:2.2.1") {
+    androidTestCompile("com.android.support.test.espresso:espresso-contrib:2.2.1") {
         exclude module: 'support-annotations'
         exclude module: 'support-v4'
         exclude module: 'support-v13'
         exclude module: 'recyclerview-v7'
     }
+    compile 'com.github.VictorAlbertos:RxGcm:0.2.6'
+    compile 'org.projectlombok:lombok:1.16.6'
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.malinskiy:superrecyclerview:1.1.3'
+    compile 'com.pnikosis:materialish-progress:1.7'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.trello:rxlifecycle:0.5.0'
+    compile 'com.trello:rxlifecycle-components:0.5.0'
+    compile 'com.github.FuckBoilerplate:OkAdapters:0.1.0'
+    compile 'com.android.support:support-v4:23.4.0'
 }
 
 configurations.all {

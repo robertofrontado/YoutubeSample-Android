@@ -21,4 +21,6 @@ package app.data.foundation.net;
  */
 public interface RestApi {
     String URL_BASE = "https://api.github.com";
+
+    String CREDENTIALS = "992677283859-4ful69covh6luchtc2tlpds2b5ivrup0.apps.googleusercontent.com";
 }

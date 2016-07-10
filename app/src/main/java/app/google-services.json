@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "992677283859",
+    "project_id": "youtubesmaple-1364"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992677283859:android:1d144133232468ca",
+        "android_client_info": {
+          "package_name": "com.frontado.youtubesample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992677283859-4ful69covh6luchtc2tlpds2b5ivrup0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frontado.youtubesample",
+            "certificate_hash": "E76431D0ACE32AE6737E2F82742FD1CD464F211C"
+          }
+        },
+        {
+          "client_id": "992677283859-echcgbi8p9llid644ud6ll8hqso3g736.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuU5iTa06d__V1nG5_BgMFFwa62cQWUvE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

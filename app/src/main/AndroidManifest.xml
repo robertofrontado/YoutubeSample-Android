@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.base_app_android">
+    package="com.frontado.youtubesample">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -53,10 +53,6 @@
 
         <activity
             android:name="app.presentation.foundation.views.SingleActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="app.presentation.sections.dashboard.DashBoardActivity"
             android:screenOrientation="portrait" />
 
     </application>
