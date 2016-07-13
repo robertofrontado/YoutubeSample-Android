@@ -16,11 +16,51 @@
 
 package app.data.foundation.net;
 
+import app.domain.sections.YoutubeVideosResponse;
+import retrofit2.Response;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
+import rx.Observable;
+
 /**
  * Definition for Retrofit of every endpoint required by the Api.
  */
 public interface RestApi {
-    String URL_BASE = "https://api.github.com";
+    String URL_BASE = "https://www.googleapis.com/youtube/v3/";
 
-    String CREDENTIALS = "992677283859-4ful69covh6luchtc2tlpds2b5ivrup0.apps.googleusercontent.com";
+    @GET("channels")
+    Observable<Response<Object>> getChannels(@Header("Authorization") String bearerToken,
+                                             @Query("part") String part,
+                                             @Query("mine") boolean mine,
+                                             @Query("access_token") String accessToken);
+
+    @GET("videos")
+    Observable<Response<Object>> getVideos(@Query("part") String part,
+                                           @Query("chart") String chart,
+                                           @Query("key") String apiKey);
+
+    @GET("videos")
+    Observable<Response<YoutubeVideosResponse>> getVideosOAuth(@Query("access_token") String bearerToken,
+                                                               @Query("part") String part,
+                                                               @Query("chart") String chart,
+                                                               @Query("key") String apiKey);
+
+    @GET("search")
+    Observable<Response<Object>> search(@Query("part") String part,
+                                        @Query("key") String apiKey);
+
+    @GET("search")
+    Observable<Response<Object>> getRelatedVideos(@Header("Authorization") String bearerToken,
+                                                  @Query("part") String part,
+                                                  @Query("relatedToVideoId") String relatedToVideoId,
+                                                  @Query("type") String type,
+                                                  @Query("key") String apiKey);
+
+    @POST("subscriptions")
+    Observable<Response<Object>> subscribe(@Query("access_token") String bearerToken);
+
 }
+

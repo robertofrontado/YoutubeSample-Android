@@ -16,15 +16,28 @@
 
 package app.presentation.sections.launch;
 
+import android.content.Intent;
 import android.os.Handler;
+import android.util.Log;
+
+import com.frontado.youtubesample.R;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import javax.inject.Inject;
 
 import app.data.foundation.analytics.GoogleAnalyticsSender;
 import app.presentation.foundation.views.BaseActivity;
+import app.presentation.foundation.views.LayoutResActivity;
+import butterknife.Bind;
+import rx.Observable;
 
+@LayoutResActivity(R.layout.activity_launch)
 public class LaunchActivity extends BaseActivity {
-    @Inject GoogleAnalyticsSender googleAnalytics;
 
     @Override protected void injectDagger() {
         getApplicationComponent().inject(this);
@@ -34,6 +47,7 @@ public class LaunchActivity extends BaseActivity {
         super.initViews();
         // Show Channels after 2 seconds
         final Handler handler = new Handler();
-        handler.postDelayed(() -> wireframe.channels(), 2000);
+        handler.postDelayed(() -> wireframe.login(), 2000);
     }
+
 }

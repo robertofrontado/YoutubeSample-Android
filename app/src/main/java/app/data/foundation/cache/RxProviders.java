@@ -16,6 +16,7 @@
 
 package app.data.foundation.cache;
 
+import app.domain.sections.User;
 import io.rx_cache.EvictProvider;
 import rx.Observable;
 
@@ -24,4 +25,6 @@ import rx.Observable;
  */
 public interface RxProviders {
     <T> Observable<T> getWireframeCurrentObject(Observable<T> oObject, EvictProvider evictProvider);
+
+    Observable<User> getUser(Observable<User> oUser, EvictProvider evictProvider);
 }

@@ -20,9 +20,9 @@ import javax.inject.Singleton;
 
 import app.data.foundation.gcm.GcmMessageReceiver;
 import app.data.foundation.gcm.GcmTokenReceiver;
-import app.presentation.sections.channels.ChannelsFragment;
-import app.presentation.sections.channels.ChannelsPresenter;
+import app.presentation.sections.videos.VideosFragment;
 import app.presentation.sections.launch.LaunchActivity;
+import app.presentation.sections.session.LoginFragment;
 import dagger.Component;
 
 /**
@@ -32,7 +32,8 @@ import dagger.Component;
 @Singleton @Component(modules = {PresentationModule.class})
 public interface PresentationComponent {
     void inject(LaunchActivity launchActivity);
-    void inject(ChannelsFragment channelsFragment);
+    void inject(VideosFragment videosFragment);
+    void inject(LoginFragment loginFragment);
 
     void inject(GcmTokenReceiver gcmTokenReceiver);
     void inject(GcmMessageReceiver gcmMessageReceiver);

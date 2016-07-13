@@ -21,12 +21,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import app.data.foundation.net.RestApi;
+import app.domain.sections.YoutubeVideosResponse;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import okio.Buffer;
 import retrofit2.Response;
 import retrofit2.adapter.rxjava.HttpException;
+import retrofit2.http.Header;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
@@ -39,6 +41,36 @@ public class RestApiMock implements RestApi {
     public RestApiMock() {
         this.seeder = new Seeder();
         validator = new Validator();
+    }
+
+    @Override
+    public Observable<Response<Object>> getChannels(@Header("Authorization:") String bearerToken, @Path("part") String part, @Path("mine") boolean mine, @Path("access_token") String accessToken) {
+        return null;
+    }
+
+    @Override
+    public Observable<Response<Object>> getVideos(@Query("part") String part, @Query("chart") String chart, @Query("key") String apiKey) {
+        return null;
+    }
+
+    @Override
+    public Observable<Response<YoutubeVideosResponse>> getVideosOAuth(@Query("access_token") String bearerToken, @Query("part") String part, @Query("chart") String chart, @Query("key") String apiKey) {
+        return null;
+    }
+
+    @Override
+    public Observable<Response<Object>> search(@Query("part") String part, @Query("key") String apiKey) {
+        return null;
+    }
+
+    @Override
+    public Observable<Response<Object>> getRelatedVideos(@Header("Authorization") String bearerToken, @Query("part") String part, @Query("relatedToVideoId") String relatedToVideoId, @Query("type") String type, @Query("key") String apiKey) {
+        return null;
+    }
+
+    @Override
+    public Observable<Response<Object>> subscribe(@Query("access_token") String bearerToken) {
+        return null;
     }
 
     private final static int SECONDS_DELAY = 2;
